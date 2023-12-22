@@ -1,6 +1,6 @@
-import Circle1 from '/Users/tt/Documents/Coding/jobsecretfinal/src/img/Frame 11.png'
-import Circle2 from '/Users/tt/Documents/Coding/jobsecretfinal/src/img/Frame 12.png'
-import '/Users/tt/Documents/Coding/jobsecretfinal/src/style/homebanner.css'
+import Circle1 from '../img/Frame 11.png'
+import Circle2 from '../img/Frame 12.png'
+import '../style/homebanner.css'
 import { useRef, useEffect, createContext, useState } from 'react';
 
 export const ScrollContext = createContext();
