@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Poppins:wght@300;400;500;600;700&family=Public+Sans:wght@300&display=swap');
+.talent-parent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #E1F2FC;
+    overflow-x: hidden;
+    
+}
+
+.talent-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.talent-text-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 200px;
+    padding-bottom:100px ;
+}
+
+.talent-text-con > p{
+    color: #2B3F6C;
+    font-weight: 500;
+    font-size: 24px;
+   
+}
+
+.talent-text-con > h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 56px;
+    color: #2B3F6C;
+    padding-bottom: 50px;
+}
+
+.talent-text-con > h1 span{
+    background-image: linear-gradient(90deg, #86B4D2, #80CFC8);
+    /* Clip the background to the text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Make the text color transparent so the gradient shows through */
+    color: transparent;
+}
+
+.talent-rank-con{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 150px;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.talent-rank.first{
+    position: relative;
+    right:200px;
+}
+
+.talent-rank.third{
+    position: relative;
+    left:200px;
+}
+
+.talent-rank{
+    display: flex;
+    align-items: center;
+    width:700px;
+    background-color: #ffff;
+    border-radius: 158px;
+    height: 140px;
+    /* justify-content: space-between; */
+    position: relative;
+    gap:20px;
+}
+
+
+
+.talent-rank > img{
+    margin-left: 20px;
+}
+
+.talent-rank > p{
+    width: 350px;
+    margin-right: 100px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color:#2B3F6C;
+}
+
+.talent-rank > h1{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 180px;
+    color: #9DDFF1;
+}
+
+.top-right {
+    position: absolute; /* Position the image absolutely within the .talent-con */
+    top: 0; /* Align to the top of the parent */
+    right: 0; /* Align to the right of the parent */
+    width: 500px;
+}
+
+.bottom-left{
+    position: absolute; /* Position the image absolutely within the .talent-con */
+    bottom: 0; /* Align to the bottom of the parent */
+    left: 0; /* Align to the left of the parent */
+    width: 500px;
+}
+
+@media (max-width: 950px) {
+    .talent-rank.first, .talent-rank.third {
+        right: 0; 
+        left: 0; 
+    }
+}
+
+@media (max-width: 788px) {
+
+    .talent-text-con{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .talent-rank-con{
+        padding-bottom: 0;
+    }
+    .talent-text-con > p{
+        font-size: 14px;
+    }
+
+    .talent-text-con > h1{
+        
+        font-size: 32px;
+        padding-bottom: 20px;
+   
+    }
+
+    .talent-rank{
+        width: 350px;
+        height: 100px;
+        gap:20px
+    }
+
+    .talent-rank p{
+        font-size: 13px;
+        margin-right: 0px;
+        width:200px;
+    }
+
+    .talent-rank img{
+        width: 56px;
+        height: 56px;
+    }
+
+    .talent-rank h1{
+        display: none;
+    }
+
+    .top-right {
+        width: 180px;
+        height: 61px;
+    }
+    
+    .bottom-left{
+        width: 180px;
+        height: 61px;
+    }
+}
