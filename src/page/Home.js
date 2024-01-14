@@ -1,13 +1,13 @@
 import Banner from "../components/banner"
 import Form from "../components/form";
 import Services from "../components/ourservice";
-import {About}  from "../components/about";
+import HomeAbout from '../components/HomeAbout'
 import Talent from "../components/talent";
 const Home = ()=>{
     return(
         <article>
             <Banner/>       
-            <About/>
+            <HomeAbout/>
             <Services/>
             <Talent/>
             <Form/>     

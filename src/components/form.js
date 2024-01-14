@@ -16,8 +16,11 @@ const formReducer = (state,action)=>{
             };
         case 'SET_RECRUITMENT':
             return{
-                ...state.recruitment,
-                [action.field] : action.value
+                ...state,
+                recruitment: {
+                    ...state.recruitment,
+                    [action.field]: action.value,
+                  },
             };
         default:
             return state;
@@ -36,8 +39,6 @@ const initialFormData = {
 }
 
 const Form = ()=>{
-    
-    // const { scrollToForm } = useContext(ScrollContext);
     const [formData,dispatch] = useReducer(formReducer,initialFormData)
     const handleChange = (e)=>{
         dispatch({
@@ -50,32 +51,13 @@ const Form = ()=>{
         dispatch({
             type: 'SET_RECRUITMENT',
             field: e.target.name,
-            value: e.target.value 
+            value: e.target.checked 
         })
     }
 
     const handleClick = async ()=>{
-        try{
-            const response = await fetch("url",
-            {
-             method: "POST", // *GET, POST, PUT, DELETE, etc.
-             mode: "cors", // no-cors, *cors, same-origin
-             cache: "no-cache", // *default, no-cache, reload, 
-             headers: {
-                 "Content-Type": "application/json",
-             },
-             body: JSON.stringify(formData)
-             })
-             const resData = await response.json();
-             console.log(resData)
-            
-         
-        } catch(err){
-            console.error(err)
-        }
-
-       
-       
+        console.log(formData)
+    
     }
     return(
         <div className='form-con'>
@@ -106,7 +88,22 @@ const Form = ()=>{
                         <div className="form-field">
                             <label for="position">Position</label>
                             <input type='text' id="position" onChange={handleChange} placeholder='Enter position' name="position" ></input>
-                        </div>
+                            {/* <select>
+                                <option value="0">Select car:</option>
+                                <option value="1">Audi</option>
+                                <option value="2">BMW</option>
+                                <option value="3">Citroen</option>
+                                <option value="4">Ford</option>
+                                <option value="5">Honda</option>
+                                <option value="6">Jaguar</option>
+                                <option value="7">Land Rover</option>
+                                <option value="8">Mercedes</option>
+                                <option value="9">Mini</option>
+                                <option value="10">Nissan</option>
+                                <option value="11">Toyota</option>
+                                <option value="12">Volvo</option>
+                            </select> */}
+                        </div> 
                         
                         <div className="form-field">
                             <label for="company">Company Name</label>
@@ -121,31 +118,30 @@ const Form = ()=>{
                             
                         <div className="form-field">
                             <label for="recruitment">Recruitment Type</label>
-                            <div className="radio-container">
-                        <div className='radio'>
-                            <input 
-                                type='radio' 
-                                id='intern' 
-                                name='recruitmentType' 
-                                value= "internship"
-                                onChange={handleTick}
-                        />
-                            <label for="intern">Internship</label>
-                        </div>
-                        <div className='radio'>
-                            <input 
-                                type='radio' 
-                                id='entry' 
-                                name='recruitmentType' 
-                                
-                                value="entryLevel"
-                                onChange={handleTick}
+                        <div className="radio-container">
+                            <div className='radio'>
+                                <input 
+                                    type='checkbox' 
+                                    id='intern' 
+                                    name='internship' 
+                                    value= "internship"
+                                    onChange={handleTick}
                             />
-                            <label for="entry">Entry-Level Jobs</label>  
-                        </div>
+                                <label for="intern">Internship</label>
+                            </div>
+                            <div className='radio'>
+                                <input 
+                                    type='checkbox' 
+                                    id='entry' 
+                                    name='entryLevel' 
+                                    value="entryLevel"
+                                    onChange={handleTick}
+                                />
+                                <label for="entry">Entry-Level Jobs</label>  
+                            </div>
                         
-                    </div>
                         </div>
+                    </div>
                             
                         
                         <button 
@@ -161,9 +157,6 @@ const Form = ()=>{
                             <a href='https://www.facebook.com/profile.php?id=100083273803843&mibextid=D4KYlr' target="blank">
                                 <img src={Fb} alt='fb'/>   
                             </a>
-                
-
-            
                 
             </div>
             

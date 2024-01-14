@@ -1,7 +1,7 @@
 import Circle1 from '../img/Frame 11.png'
 import Circle2 from '../img/Frame 12.png'
 import '../style/homebanner.css'
-import { useRef, useEffect, createContext, useState } from 'react';
+import { useRef, useEffect, createContext } from 'react';
 
 export const ScrollContext = createContext();
 
@@ -9,9 +9,6 @@ const Banner = ()=>{
     const formTextRef = useRef(null);
     const homeRef = useRef(null);
     
-    // const handleScroll = ()=>{
-    //     goToForm.current.scrollIntoView({behavior: 'smooth'});
-    // }
 
     useEffect(() => {
         const handleResize = () => {

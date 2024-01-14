@@ -3,7 +3,7 @@ import Grad from '../img/Frame 54.png'
 import Upward from '../img/Frame 55.png'
 import Computer from '../img/Group 18.png'
 import '../style/homeaboutus.css'
-export const About = ()=>{
+const HomeAbout = ()=>{
     return(
         <article style={{'background':'#E1F2FC'}}>
             <div className='about'>
@@ -55,3 +55,4 @@ export const About = ()=>{
         </article>
     )
 }
+export default HomeAbout

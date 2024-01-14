@@ -41,10 +41,10 @@ const Nav = ()=>{
                 <a href="/">Home</a>
             </li>
             <li className="menu-items desktop-only">
-                <a href="about">About Us</a>
+                <a href="/about">About Us</a>
             </li>
             <li className="menu-items desktop-only">
-                <a href="activities">Our Activities</a>
+                <a href="/activities">Our Activities</a>
             </li>
             </ul>
             
