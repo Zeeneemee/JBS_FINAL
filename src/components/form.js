@@ -57,8 +57,10 @@ const Form = ()=>{
 
     const handleClick = async ()=>{
         console.log(formData)
-    
+        // axios post to backend the formData
+        // if success then alert success
     }
+
     return(
         <div className='form-con'>
             <div className='left'>

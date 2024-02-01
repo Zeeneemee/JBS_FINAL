@@ -91,3 +91,67 @@ background-clip: text;
     text-align: center;
     font-size: 18px;
 }
+
+.achievement_pic_con{
+    display: flex;
+    width: 100%;
+    align-items: start;
+    justify-content: center;
+    gap:10px;
+}
+
+
+.achievement_pic_col1 > img{
+    width: 500px;
+    height: 800px;
+}
+
+.achievement_pic_col2 > img{
+    width: 450px;
+    height: 800px;
+}
+
+.achievement_pic_col3 > img{
+    width: 300px;
+    height: 800px;
+}
+
+.achievement_events_con{
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    margin: 50px 88px 160px 88px ;
+    align-items: center;
+}
+
+.achievement_events_con img:nth-child(1){
+    width: 250px;
+    height: 120px;
+
+}
+
+.achievement_events_con img:nth-child(2){
+    width: 150px;
+    height: 96px;
+   
+}
+
+.achievement_events_con img:nth-child(3){
+    width: 189px;
+    height: 96px;
+
+}
+
+
+.achievement_events_con img{
+    width: 120px;
+    height: 120px;
+
+}
+
+.achievement_events_con img:last-child{
+    width: 120px;
+    height: 120px;
+
+}
+
