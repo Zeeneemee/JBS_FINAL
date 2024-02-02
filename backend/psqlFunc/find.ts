@@ -23,3 +23,7 @@ export const findFullName = async (fullName: string) => {
         console.log(error)
     }
 }
+
+findId(1).then((student) => {
+    console.log(student)
+})

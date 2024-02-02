@@ -3,6 +3,7 @@ import Work from '../img/Rectangle 137.png'
 import Ig from '../img/ig.png'
 import Fb from '../img/fb.png'
 import { useReducer  } from 'react'
+import axios from 'axios'
 
 
 // change to useReduer 
@@ -17,10 +18,9 @@ const formReducer = (state,action)=>{
         case 'SET_RECRUITMENT':
             return{
                 ...state,
-                recruitment: {
-                    ...state.recruitment,
-                    [action.field]: action.value,
-                  },
+                
+                [action.field]: action.value,
+                 
             };
         default:
             return state;
@@ -32,34 +32,50 @@ const initialFormData = {
     position: '',
     companyName: '',
     email: '',
-    recruitment: {
-        internship: false,
-        entryLevel: false,
-    },
+    internship: false,
+    entryLevel: false,
 }
 
-const Form = ()=>{
-    const [formData,dispatch] = useReducer(formReducer,initialFormData)
-    const handleChange = (e)=>{
-        dispatch({
-            type: 'SET_FIELD',
-            field: e.target.name,
-            value: e.target.value 
-        });
-    };
-    const handleTick = (e)=>{
-        dispatch({
-            type: 'SET_RECRUITMENT',
-            field: e.target.name,
-            value: e.target.checked 
-        })
-    }
 
-    const handleClick = async ()=>{
-        console.log(formData)
-        // axios post to backend the formData
-        // if success then alert success
-    }
+    const Form = () => {
+        const [formData, dispatch] = useReducer(formReducer, initialFormData);
+    
+        const handleChange = (e) => {
+            dispatch({
+                type: 'SET_FIELD',
+                field: e.target.name,
+                value: e.target.value,
+            });
+            console.log('formData:', formData);
+        };
+    
+        const handleTick = (e) => {
+            dispatch({
+                type: 'SET_RECRUITMENT',
+                field: e.target.name,
+                value: e.target.checked,
+            });
+            console.log('formData:', formData);
+        };
+    
+        const handleClick = async (e) => {
+            e.preventDefault(); // Prevent default form submission
+    
+            console.log('formData:', formData);
+            axios.post('http://localhost:4000/student', formData)
+                .then(response => {
+                    console.log('AxiosResponse:', response);
+                })
+                .catch(error => {
+                    console.error('AxiosError:', error);
+                    // Handle the error
+                });
+        };
+    
+      
+    
+
+    
 
     return(
         <div className='form-con'>
@@ -90,21 +106,6 @@ const Form = ()=>{
                         <div className="form-field">
                             <label for="position">Position</label>
                             <input type='text' id="position" onChange={handleChange} placeholder='Enter position' name="position" ></input>
-                            {/* <select>
-                                <option value="0">Select car:</option>
-                                <option value="1">Audi</option>
-                                <option value="2">BMW</option>
-                                <option value="3">Citroen</option>
-                                <option value="4">Ford</option>
-                                <option value="5">Honda</option>
-                                <option value="6">Jaguar</option>
-                                <option value="7">Land Rover</option>
-                                <option value="8">Mercedes</option>
-                                <option value="9">Mini</option>
-                                <option value="10">Nissan</option>
-                                <option value="11">Toyota</option>
-                                <option value="12">Volvo</option>
-                            </select> */}
                         </div> 
                         
                         <div className="form-field">
@@ -144,13 +145,9 @@ const Form = ()=>{
                         
                         </div>
                     </div>
-                            
-                        
                         <button 
                         onClick={handleClick} 
                         className='submit'>Submit</button>
-                        
-                       
                         </div>
                         <div className='social mobile'>
                             <a href='https://instagram.com/jobsecret.official?igshid=MzRlODBiNWFlZA==' target="blank">
