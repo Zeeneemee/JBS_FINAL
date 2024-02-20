@@ -1,7 +1,7 @@
-import Kwan from '../img/member/kwan.png'
-import Pang from '../img/member/pang.png'
-import Pearly from '../img/member/pearly.png'
-import Tt from '../img/member/tt.jpeg'
+import Kwan from '../img/member/compressed/kwan.png'
+import Pang from '../img/member/compressed/pang.png'
+import Pearly from '../img/member/compressed/pearly.png'
+import Tt from '../img/member/compressed/tt.jpeg'
 import '../style/ourTeam.css'
 const OurTeam = () =>{
     return(

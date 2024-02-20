@@ -18,10 +18,13 @@ const Aboutbanner = () => {
                 </div> 
             </div>
             <div className="col_2">
-                <span>About us</span>
-                <span className="about_mission">
-                JobSecret is a mission-oriented provider of human resource and recruitment services that prioritizes effective collaboration between companies and university students. Our recruitment services aim to improve the employee branding of overlooked Gen Z companies and streamline the recruitment process through exclusive events with university students. 
-                </span>
+                <span className='about_us_mission'>About us</span>
+           
+                    <span className="about_mission">
+                    JobSecret is a mission-oriented provider of human resource and recruitment services that prioritizes effective collaboration between companies and university students. Our recruitment services aim to improve the employee branding of overlooked Gen Z companies and streamline the recruitment process through exclusive events with university students. 
+                    </span>
+             
+                
             </div>
         </div>
         <div className="about_row2">
@@ -46,9 +49,9 @@ const Aboutbanner = () => {
         </div>
        
         
-        <div className='circle_about'>
-            <img src={AboutCircle} alt='circle'/>
-        </div>       
+       
+        <img className="circle_about" src={AboutCircle} alt='circle'/>
+            
         </article>
     )
 }

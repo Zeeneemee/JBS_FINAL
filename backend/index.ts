@@ -7,7 +7,6 @@ const app = express();
 const port = 4000;
 
 
-
 app.use(cors());
 app.use(express.json());
 
@@ -15,7 +14,6 @@ app.post('/student', async (req: Request, res: Response) => {
     try {
         console.log(req.body);
         const studentData = await insert(req.body);
-        
         res.status(201).json({ message: 'Student record created successfully', student: studentData });
     } catch (error) {
         // Handle any errors that occur during database operation

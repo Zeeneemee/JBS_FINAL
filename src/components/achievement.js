@@ -57,10 +57,13 @@ const Achievement = ()=>{
                 <img src={img1} alt='event1'/>
                 <img src={img2} alt='event2'/> 
                 <img src={img3} alt='event3'/>
-                <img src={img4} alt='event4'/>
-                <img src={img5} alt='event5'/>
-                <img src={img6} alt= 'event6'/>
-                <img src={img7} alt='event7'/> 
+                <div className='event_wrap'>
+                    <img src={img4} alt='event4'/>
+                    <img src={img5} alt='event5'/>
+                    <img src={img6} alt= 'event6'/>
+                    <img src={img7} alt='event7'/> 
+                </div>
+               
             </div>
         </div>
     )

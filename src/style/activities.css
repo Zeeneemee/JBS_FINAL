@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&family=Public+Sans:wght@300&display=swap');
+.activities{
+    display: flex;
+    justify-content: center;
+    gap:50px;
+    align-items: center;
+}
+.laptop-con{
+    position: relative;
+    bottom: 20px;
+    z-index: -100;
+}
+
+.laptop-con > img{
+    height: 500px;
+    width: 500px;
+}
+
+.left-activities{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.right-activities{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.past-session-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.past-session-data > h4{
+    font-size: 64px;
+    color: #637FE2;
+    white-space: nowrap;
+}
+
+.past-session-data > p{
+    font-size: 18px;
+    color: #2B3F6C;
+    font-family: 'Poppins', sans-serif;
+    max-width: 600px;
+}
+
+@media (max-width:788px) {
+    .activities{
+        gap: 0;
+        padding: 30px;
+    }
+    .laptop-con{
+        display: none;
+    }
+}

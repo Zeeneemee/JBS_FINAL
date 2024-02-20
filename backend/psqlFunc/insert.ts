@@ -1,6 +1,6 @@
 import { Prisma, PrismaClient } from '@prisma/client'
 import { Student } from '../model'
-import { findId, findFullName } from './find'
+import { findFullName } from './find'
 
 const prisma = new PrismaClient()
 
@@ -26,8 +26,6 @@ const insert = async (studentData: Student) => {
             Internship: studentData.internship,
             EntryLevel: studentData.entryLevel
         };
-        
-
         const student = await prisma.student.createMany({ data: prismaStudentData });
         console.log("Data have been inserted", student);
         return student; // Return the created student
