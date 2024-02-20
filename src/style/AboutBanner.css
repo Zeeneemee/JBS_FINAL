@@ -151,7 +151,7 @@
     position: absolute;
 }
 
-@media (max-width:788px) {
+@media (max-width:850px) {
     .about-banner{
         gap: 0;
     }

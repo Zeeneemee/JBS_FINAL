@@ -28,9 +28,10 @@
 }
 .team_member_con{
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap:100px;
+    flex-wrap: wrap;
 }
 
 .team_member{
@@ -126,12 +127,12 @@
     line-height: normal;
 }
 
-@media (max-width:788px) {
-    .team_member_con{
+@media (max-width:850px) {
+    /* .team_member_con{
         gap: 30px;
         flex-wrap: wrap;
         justify-content: center;    
-    }
+    } */
     .team_text_con{
         padding: 30px;
     }
