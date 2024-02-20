@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Nav from './components/nav';
 import Home from './page/Home';
@@ -10,11 +10,11 @@ function App() {
   return (
     <Router>
       <Nav />
-      <Switch>
-      <Route path="/about" component={About} />
-      <Route path="/activities" component={Activities}/>
-        <Route path="/" component={Home} />
-      </Switch>
+      <Routes>
+      <Route path="/about" element={<About/>} />
+      <Route path="/activities" element={<Activities/>}/>
+        <Route path="/" element={<Home/>} />
+      </Routes>
     </Router>
   );
 }
