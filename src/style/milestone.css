@@ -11,6 +11,7 @@
     padding: 100px 0;
     height: 1500px; 
     overflow: hidden;
+    
 }
 .milestone-text-con{
     text-align: center;
@@ -191,8 +192,23 @@
 }
 .line_dot:nth-child(6){
     top:380px;
+    display: flex;
+    position: relative;
 }
+.line_dot:nth-child(6) p{
+    position: absolute;
+    right: 50px;
+    width:200px;
+    background: linear-gradient(90deg, #86B4D2 0%, #80CFC8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 32px;
+}
+
 .line_dot:nth-child(7){
+    background-color: #CACDCE;
     top:450px;
 }
 

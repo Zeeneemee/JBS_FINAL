@@ -11,7 +11,6 @@ import Hr from '../img/image 6.png'
 import Ptlng from '../img/image 7.png'
 import Rocket from '../img/rocket.png'
 import '../style/milestone.css'
-
 const Milestone = ()=>{
     return(
         <div className='milestone_con'>
@@ -95,7 +94,10 @@ const Milestone = ()=>{
                             <div className='line_dot'></div>
                             <div className='line_dot'></div>
                             <div className='line_dot'></div>
-                            <div className='line_dot'></div>
+                            <div className='line_dot'>
+                                <p>We are here</p>
+                            </div>
+                            
                             <div className='line_dot'></div>
                         </div>
                         

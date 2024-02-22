@@ -5,7 +5,7 @@ import { useRef, useEffect, createContext } from 'react';
 
 export const ScrollContext = createContext();
 
-const Banner = ()=>{
+const Banner = ({annimation})=>{
     const formTextRef = useRef(null);
     const homeRef = useRef(null);
     
@@ -43,8 +43,8 @@ const Banner = ()=>{
 
     return(
        
-        <article className='home' ref={homeRef}>
-            <div className="col-1">
+        <article className='home fade-in' ref={homeRef}>
+            <div className="col-1 fade-in ">
                 <div className="title">
                     <h1>
                         Reveal the
@@ -65,13 +65,13 @@ const Banner = ()=>{
                     </p>
                 </div>
             </div>
-            <div className="col-2">
+            <div className="col-2 fade-in">
             <div className='img-con-2'>
                 <img src={Circle1} alt='Circle-2'/>
                 </div>
               
             </div>
-            <div className="col-3">
+            <div className="col-3 fade-in">
                 <div className='img-con-3'>
                 <img src={Circle2} alt='Circle-2'/>
                 </div>

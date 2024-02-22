@@ -39,7 +39,9 @@
     color: #637FE2;
     white-space: nowrap;
 }
-
+.past-session-data > h4:first-child{
+    width: 119px;
+}
 .past-session-data > p{
     font-size: 18px;
     color: #2B3F6C;

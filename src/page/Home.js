@@ -3,10 +3,10 @@ import Form from "../components/form";
 import Services from "../components/ourservice";
 import HomeAbout from '../components/HomeAbout'
 import Talent from "../components/talent";
-const Home = ()=>{
+const Home = ({annimation})=>{
     return(
         <article>
-            <Banner/>       
+            <Banner />       
             <HomeAbout/>
             <Services/>
             <Talent/>
