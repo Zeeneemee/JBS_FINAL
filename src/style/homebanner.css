@@ -26,11 +26,12 @@ animation: fadeIn 1s ease-in 0s 1 normal forwards;
 
 .home{
     background: linear-gradient(90deg,#2E4470,#86D2D3);
-    height: 600px;
+    /* height: 2000px; */
     width: 100%;
     display: flex;
     gap:20px;
     overflow-x: hidden;
+
 }
 
 /* span{

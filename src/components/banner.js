@@ -8,7 +8,7 @@ export const ScrollContext = createContext();
 const Banner = ({annimation})=>{
     const formTextRef = useRef(null);
     const homeRef = useRef(null);
-    
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -19,7 +19,7 @@ const Banner = ({annimation})=>{
             
             else {
                 formTextRef.current.textContent = 'Submit recruit and contact details';
-                homeRef.current.style.height = '600px';
+                homeRef.current.style.height = '700px';
             }
         };
 
@@ -43,8 +43,8 @@ const Banner = ({annimation})=>{
 
     return(
        
-        <article className='home fade-in' ref={homeRef}>
-            <div className="col-1 fade-in ">
+        <article className='home' ref={homeRef}>
+            <div className="col-1  ">
                 <div className="title">
                     <h1>
                         Reveal the
