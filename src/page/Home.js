@@ -35,14 +35,8 @@ const Home = ({ animation }) => {
 
     return (
         <article>
-            <motion.div
-                initial="hidden"
-                whileInView="visible"
-                variants={bannerVariants}
-                viewport={{ once: true }}
-            >
+            
                 <Banner />
-            </motion.div>
             <motion.div
                 initial="hidden"
                 whileInView="visible"
