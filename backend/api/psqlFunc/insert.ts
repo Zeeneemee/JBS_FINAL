@@ -27,7 +27,7 @@ const insert = async (studentData: Student) => {
             EntryLevel: studentData.entryLevel
         };
         const student = await prisma.student.createMany({ data: prismaStudentData });
-        console.log("Data have been inserted", student);
+        
         return student; // Return the created student
     }
         
@@ -38,13 +38,6 @@ const insert = async (studentData: Student) => {
         await prisma.$disconnect(); // Ensuring the connection is closed
     }
 };
-insert({
-    "fullname": "meaw",
-    "position": "cdo",
-    "companyName": "Jobsecret",
-    "email": "meaw@gmail.com",
-    "internship": true,
-    "entryLevel": false
-  })
+
 export { insert };
 // backend/api/psqlFunc/insert.ts

@@ -4,6 +4,8 @@ import Form from "../components/form";
 import Services from "../components/ourservice";
 import HomeAbout from '../components/HomeAbout';
 import Talent from "../components/talent";
+import { Analytics } from '@vercel/analytics/react';
+
 import { useEffect, useState } from 'react';
 
 const Home = ({ animation }) => {
@@ -69,6 +71,7 @@ const Home = ({ animation }) => {
             >
                 <Form />
             </motion.div>
+            <Analytics/>
         </article>
     );
 }

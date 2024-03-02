@@ -15,3 +15,4 @@ dist/
 # Ignore sensitive or personal files
 config.ini
 secrets.txt
+.vercel
