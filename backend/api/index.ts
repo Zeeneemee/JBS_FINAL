@@ -10,7 +10,7 @@ const port = 4000;
 app.use(cors());
 app.use(express.json());
 
-app.post('/', async (req: Request, res: Response) => {
+app.post('/student', async (req: Request, res: Response) => {
     try {
         console.log(req.body);
         const studentData = await insert(req.body);
