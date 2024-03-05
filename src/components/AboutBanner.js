@@ -1,8 +1,10 @@
 import '../style/AboutBanner.css'
 import AboutCircle from '../img/aboutCircle.png'
-
+import {motion} from 'framer-motion';
 const Aboutbanner = () => {
+    
     return(
+        
         <article className="about-banner">
         <div className="about_row1">
             <div className="col_1">

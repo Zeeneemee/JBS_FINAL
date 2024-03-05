@@ -37,13 +37,19 @@ const Home = ({ animation }) => {
 
     return (
         <article>
-            
+            <motion.div
+            initial = "hidden"
+            whileInView="visible"
+            variants={bannerVariants}
+            viewport={{once:true}}>
                 <Banner />
+            </motion.div>
+              
             <motion.div
                 initial="hidden"
                 whileInView="visible"
                 variants={homeAboutVariants}
-                viewport={{ once: true }}
+                viewport={{once:true}}
             >
                 <HomeAbout />
             </motion.div>
@@ -51,7 +57,7 @@ const Home = ({ animation }) => {
                 initial="hidden"
                 whileInView="visible"
                 variants={servicesVariants}
-                viewport={{ once: true }}
+                viewport={{once:true}}
             >
                 <Services />
             </motion.div>
@@ -59,7 +65,7 @@ const Home = ({ animation }) => {
                 initial="hidden"
                 whileInView="visible"
                 variants={talentVariants}
-                viewport={{ once: true }}
+                viewport={{once:true}}
             >
                 <Talent />
             </motion.div>
@@ -67,7 +73,7 @@ const Home = ({ animation }) => {
                 initial="hidden"
                 whileInView="visible"
                 variants={formVariants}
-                viewport={{ once: true }}
+                viewport={{once:true}}
             >
                 <Form />
             </motion.div>
