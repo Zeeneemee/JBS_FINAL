@@ -2,8 +2,9 @@ import '../style/form.css'
 import Work from '../img/Rectangle 137.png'
 import Ig from '../img/ig.png'
 import Fb from '../img/fb.png'
-import { useReducer  } from 'react'
+import { useReducer, useRef, useState, useEffect } from 'react'
 import axios from 'axios'
+
 
 
 // change to useReduer 
@@ -18,7 +19,6 @@ const formReducer = (state,action)=>{
         case 'SET_RECRUITMENT':
             return{
                 ...state,
-                
                 [action.field]: action.value,
                  
             };
@@ -37,46 +37,90 @@ const initialFormData = {
 }
 
 
-    const Form = () => {
-        const [formData, dispatch] = useReducer(formReducer, initialFormData);
+const Form = () => {
+    const input = useRef(null);
+    const tick = useRef(null);
+    const [emailError, setEmailError] = useState(false);
+    const [recruitmentError, setRecruitmentError] = useState(false); 
+    const [formData, dispatch] = useReducer(formReducer, initialFormData);
+
+    const validEmail = new RegExp(
+        '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
+     );
     
-        const handleChange = (e) => {
-            dispatch({
-                type: 'SET_FIELD',
-                field: e.target.name,
-                value: e.target.value,
-            });
-            console.log('formData:', formData);
-        };
-    
-        const handleTick = (e) => {
-            dispatch({
-                type: 'SET_RECRUITMENT',
-                field: e.target.name,
-                value: e.target.checked,
-            });
-            console.log('formData:', formData);
-        };
-    
-        const handleClick = async (e) => {
-            e.preventDefault(); // Prevent default form submission
-    
-            console.log('formData:', formData);
-            axios.post('https://backend-9798uol5j-zeeneemees-projects.vercel.app/student', formData)
-                .then(response => {
-                    console.log('AxiosResponse:', response);
-                })
-                .catch(error => {
-                    console.error('AxiosError:', error);
-                    // Handle the error
-                });
-        };
-    
-      
     
 
+    useEffect(()=>{
+        const handleError = ()=>{
+            if (emailError){
+                input.current.style.border = "1px solid red";
+            }
+        }
+       handleError();
+    },[emailError,recruitmentError,input,tick])
+        
     
+    const handleChange = (e) => {
+        dispatch({
+            type: 'SET_FIELD',
+            field: e.target.name,
+            value: e.target.value,
+        });
+        console.log('formData:', formData);
+    };
 
+    const handleTick = (e) => {
+        dispatch({
+            type: 'SET_RECRUITMENT',
+            field: e.target.name,
+            value: e.target.checked,
+        });
+        console.log('formData:', formData);
+    };
+    const checkData = (data) => {
+        let isValid = true;
+    
+        // Email validation
+        if (!validEmail.test(data.email)) {
+            setEmailError(true);
+            input.current.style.border = "1px solid red"; // Direct DOM manipulation for error visual
+            isValid = false;
+        } else {
+            setEmailError(false);
+            input.current.style.border = ""; // Reset style if corrected
+        }
+    
+        // Checkbox (internship or entry-level) validation
+        if (!(data.internship || data.entryLevel)) {
+            setRecruitmentError(true);
+            isValid = false;
+        } else {
+            setRecruitmentError(false);
+        }
+    
+        return isValid; // Return true if both conditions are valid
+    };
+
+    const handleClick = async (e) => {
+        e.preventDefault(); // Prevent default form submission
+        // Only proceed if checkData returns true, indicating no errors
+        if (checkData(formData)) {
+            console.log('formData:', formData);
+            try {
+                const response = await axios.post('https://https://jbsapi-njtf1rxfb-zeeneemees-projects.vercel.app//student', formData);
+                console.log('AxiosResponse:', response);
+                // Reset form or provide success feedback here
+            } catch (error) {
+                console.error('AxiosError:', error);
+                // Handle the error, show user feedback
+            }
+        } else {
+            console.error('Invalid form data:', formData);
+            // Optionally, handle form error feedback here
+        }
+    };
+    
+    
     return(
         <div className='form-con'>
             <div className='left'>
@@ -115,7 +159,7 @@ const initialFormData = {
                         
                         <div className="form-field">
                             <label for="email">Email</label>
-                            <input type='email' id="email" onChange={handleChange} placeholder='Enter an email' name="email"></input>
+                            <input type='email' id="email" onChange={handleChange} placeholder='Enter an email' name="email" ref={input}></input>
                         </div>
                             
                             
@@ -129,6 +173,7 @@ const initialFormData = {
                                     name='internship' 
                                     value= "internship"
                                     onChange={handleTick}
+                                    ref={tick}
                             />
                                 <label for="intern">Internship</label>
                             </div>
@@ -139,15 +184,20 @@ const initialFormData = {
                                     name='entryLevel' 
                                     value="entryLevel"
                                     onChange={handleTick}
+                                    ref={tick}
                                 />
                                 <label for="entry">Entry-Level Jobs</label>  
                             </div>
-                        
                         </div>
+                        
                     </div>
+                    
                         <button 
                         onClick={handleClick} 
                         className='submit'>Submit</button>
+                        <div className='error'>
+                            <p>{emailError? "Enter a correct email": recruitmentError? "Please tick a box": null}</p>
+                        </div>
                         </div>
                         <div className='social mobile'>
                             <a href='https://instagram.com/jobsecret.official?igshid=MzRlODBiNWFlZA==' target="blank">
@@ -156,8 +206,8 @@ const initialFormData = {
                             <a href='https://www.facebook.com/profile.php?id=100083273803843&mibextid=D4KYlr' target="blank">
                                 <img src={Fb} alt='fb'/>   
                             </a>
-                
-            </div>
+                    </div>
+                    
             
         </div>
     )

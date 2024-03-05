@@ -129,6 +129,7 @@ input[type="email"]::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 input[type="checkbox"] {
@@ -139,6 +140,7 @@ input[type="checkbox"] {
     position: relative;
     background-color: #ffff;
     border-radius: 50px;
+    
 }
 
 .submit{
@@ -167,6 +169,13 @@ input[type="checkbox"] {
 
 .social.mobile{
     display: none;
+}
+
+.error{
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 
