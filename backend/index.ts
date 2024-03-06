@@ -10,17 +10,22 @@ const port = 4000;
 app.use(cors());
 app.use(express.json());
 
-app.post('/student', async (req: Request, res: Response) => {
+app.post('/', async (req: Request, res: Response) => {
     try {
         console.log(req.body);
         const studentData = await insert(req.body);
-        res.status(201).json({ message: 'Student record created successfully', student: studentData });
+        res.status(201).json({ message: 'Student record created successfully',studentData});
     } catch (error) {
         // Handle any errors that occur during database operation
         console.error('Error creating student record:', error);
         res.status(500).json({ message: 'Internal server error' });
     }
 });
+
+app.get('/', (req: Request, res: Response) => {
+    res.send('Hello World!');
+})
+
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
