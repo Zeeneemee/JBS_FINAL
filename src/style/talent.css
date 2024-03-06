@@ -25,7 +25,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     width: 100%;
     padding-top: 200px;
     padding-bottom:100px ;
@@ -132,6 +132,7 @@
     .talent-text-con{
         padding-top: 80px;
         padding-bottom: 80px;
+        height: 700px;
     }
 
     .talent-rank-con{
@@ -142,10 +143,8 @@
     }
 
     .talent-text-con > h1{
-        
         font-size: 32px;
         padding-bottom: 20px;
-   
     }
 
     .talent-rank{
