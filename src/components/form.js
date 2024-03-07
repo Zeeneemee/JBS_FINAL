@@ -107,7 +107,7 @@ const Form = () => {
         if (checkData(formData)) {
             console.log('formData:', formData);
             try {
-                const response = await axios.post('https://https://jbsapi-njtf1rxfb-zeeneemees-projects.vercel.app//student', formData);
+                const response = await axios.post('https://backend-ivory-gamma-85.vercel.app/', formData);
                 console.log('AxiosResponse:', response);
                 // Reset form or provide success feedback here
             } catch (error) {
