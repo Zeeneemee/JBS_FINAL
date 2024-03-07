@@ -40,6 +40,7 @@ const initialFormData = {
 const Form = () => {
     const input = useRef(null);
     const tick = useRef(null);
+    const sent = useRef(null);
     const [emailError, setEmailError] = useState(false);
     const [recruitmentError, setRecruitmentError] = useState(false); 
     const [formData, dispatch] = useReducer(formReducer, initialFormData);
@@ -109,14 +110,18 @@ const Form = () => {
             try {
                 const response = await axios.post('https://backend-ivory-gamma-85.vercel.app/', formData);
                 console.log('AxiosResponse:', response);
-                // Reset form or provide success feedback here
+                sent.current.style.display = "block";
+                sent.current.style.color = "green";
+                sent.current.style.fontSize = "1.5rem";
+                sent.current.style.fontWeight = "bold";
+                sent.current.innerHTML = "Form submitted successfully!";
             } catch (error) {
                 console.error('AxiosError:', error);
-                // Handle the error, show user feedback
+                
             }
         } else {
             console.error('Invalid form data:', formData);
-            // Optionally, handle form error feedback here
+            
         }
     };
     
@@ -197,7 +202,9 @@ const Form = () => {
                         className='submit'>Submit</button>
                         <div className='error'>
                             <p>{emailError? "Enter a correct email": recruitmentError? "Please tick a box": null}</p>
+                            <p ref={sent}/>
                         </div>
+                        
                         </div>
                         <div className='social mobile'>
                             <a href='https://instagram.com/jobsecret.official?igshid=MzRlODBiNWFlZA==' target="blank">
