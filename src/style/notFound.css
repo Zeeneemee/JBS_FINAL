@@ -1,0 +1,33 @@
+.notfound_con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(90deg,#2E4470,#86D2D3);
+    /* height: 2000px; */
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    
+}
+.notfound_con h1{
+    background-image: linear-gradient(90deg, #86B4D2, #80CFC8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: white;
+    text-align: center;
+    font-size: 5rem;
+}
+
+a .backhome{
+    background-color: #9EC2DB;
+    border-radius: 20px;
+    color: white;
+    outline: none;
+    padding:20px;
+    font-weight: 600;
+    border: none;
+    font-size: 1.5em;
+}
