@@ -13,22 +13,22 @@ const OurTeam = () =>{
                 <div className='team_member'>
                     <img src={Kwan} alt='Kwan'/>
                     <p className='name'>Khongkwan</p>
-                    <p className='position'>Hustler</p>
+                    <p className='position'>CEO</p>
                 </div>
                 <div className='team_member'>
                     <img src={Pang} alt='Pang'/>
                     <p className='name'>Pang</p>
-                    <p className='position'>Hustler</p>
+                    <p className='position'>COO</p>
                 </div>
                 <div className='team_member'>
                     <img src={Pearly} alt='Pearly'/>
                     <p className='name'>Pearly</p>
-                    <p className='position'>Hipster</p>
+                    <p className='position'>CMO</p>
                 </div>
                 <div className='team_member'>
                     <img src={Tt} alt='Tt'/>
                     <p className='name'>Tt</p>
-                    <p className='position'>Hacker</p>
+                    <p className='position'>CTO</p>
                 </div>
                 
             </div>
