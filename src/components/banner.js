@@ -55,7 +55,7 @@ const Banner = ({annimation})=>{
                 <div className="subtitle">
                     <p>
                     JobSecret offers reliable recruitment services to 
-                    <p> companies, facilitating in discovering potential </p>
+                    <br/>companies, facilitating in discovering potential<br/> 
                     entry-level candidates.
                     </p>
                 </div>

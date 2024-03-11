@@ -30,7 +30,7 @@ const Nav = ()=>{
                <li className="mobile-items"><a href="/">Home</a></li>
                <li className="mobile-items"><a href="about">About Us</a></li>
                <li className="mobile-items"><a href="activities">Our Activities</a></li>
-               <li className="mobile-items"><a href="Contact Us">Contact Us</a></li>
+               <li className="mobile-items"><a href="notFound">Contact Us</a></li>
            </div>
             
            
@@ -50,7 +50,7 @@ const Nav = ()=>{
             
             
             <div className="contact">
-                <a href="#contact">Contact Us</a>
+                <a href="/notFound">Contact Us</a>
             </div> 
             
         </div>

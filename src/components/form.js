@@ -109,12 +109,21 @@ const Form = () => {
             console.log('formData:', formData);
             try {
                 const response = await axios.post('https://backend-ivory-gamma-85.vercel.app/', formData);
+                if (response){
+                    sent.current.style.display = "block";
+                    sent.current.style.color = "green";
+                    sent.current.style.fontSize = "1.5rem";
+                    sent.current.style.fontWeight = "bold";
+                    sent.current.innerHTML = "Form submitted successfully!";
+                }
+                else{
                 console.log('AxiosResponse:', response);
                 sent.current.style.display = "block";
-                sent.current.style.color = "green";
+                sent.current.style.color = "red";
                 sent.current.style.fontSize = "1.5rem";
                 sent.current.style.fontWeight = "bold";
-                sent.current.innerHTML = "Form submitted successfully!";
+                sent.current.innerHTML = "Form Submission Falied!";
+                }
             } catch (error) {
                 console.error('AxiosError:', error);
                 

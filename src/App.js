@@ -4,6 +4,7 @@ import Nav from './components/nav';
 import Home from './page/Home';
 import About from './page/about';
 import Activities from './page/activities';
+import NotFoundPage from './page/notFoundPgae';
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       <Routes>
       <Route path="/about" element={<About/>} />
       <Route path="/activities" element={<Activities/>}/>
-        <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/notFound" element={<NotFoundPage/>}/>
       </Routes>
     </Router>
   );
