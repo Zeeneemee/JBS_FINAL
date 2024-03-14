@@ -11,7 +11,7 @@ const insert = async (studentData: Student) => {
         const existingEmail = await prisma.student.findUnique({ where: { Email: studentData.email } });
         if (existing) {
             console.log("Data already exist");
-            return "Student already exists"; // You might want to change this to throw an error or similar
+            return "Student already exists"; 
         } else if (existingEmail) {
             console.log("Student with the same email already exists");
             return "Student with the same email already exists";
@@ -24,7 +24,8 @@ const insert = async (studentData: Student) => {
             CompanyName: studentData.companyName,
             Email: studentData.email,
             Internship: studentData.internship,
-            EntryLevel: studentData.entryLevel
+            EntryLevel: studentData.entryLevel,
+            Date: new Date()
         };
         const student = await prisma.student.createMany({ data: prismaStudentData });
         

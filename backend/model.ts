@@ -5,6 +5,7 @@ export type Student = { // Corrected from 'int' to 'number'
     email: string,
     internship?: boolean, // Made optional with '?'
     entryLevel?: boolean  // Made optional with '?'
+    Date?: Date
 }
 
 // interface Students {

@@ -19,4 +19,5 @@ model Student {
   Email String @unique
   Internship Boolean? @default(false)
   EntryLevel Boolean? @default(false)
+  Date DateTime @default(now())
 }
