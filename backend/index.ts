@@ -1,5 +1,6 @@
 import { insert } from './psqlFunc/insert'; // Import your custom insert function
 import express, { Request, Response } from 'express';
+import { Mailer } from './email';
 const cors = require('cors');
 
 
@@ -13,7 +14,9 @@ app.use(express.json());
 app.post('/', async (req: Request, res: Response) => {
     try {
         console.log(req.body);
+        const {email, fullname, position, companyName, internship, entryLevel} = req.body;
         const studentData = await insert(req.body);
+        await Mailer(email,fullname, position, companyName, internship, entryLevel);
         res.status(201).json({ message: 'Student record created successfully',studentData});
     } catch (error) {
         // Handle any errors that occur during database operation

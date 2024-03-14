@@ -108,7 +108,9 @@ const Form = () => {
         if (checkData(formData)) {
             console.log('formData:', formData);
             try {
-                const response = await axios.post('https://backend-ivory-gamma-85.vercel.app/', formData);
+                // const response = await axios.post('https://backend-ivory-gamma-85.vercel.app/', formData);
+                const response = await axios.post('http://localhost:4000', formData);
+
                 if (response){
                     sent.current.style.display = "block";
                     sent.current.style.color = "green";

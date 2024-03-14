@@ -13,9 +13,7 @@
     
 }
 .notfound_con h1{
-    background-image: linear-gradient(90deg, #86B4D2, #80CFC8);
-    -webkit-background-clip: text;
-    background-clip: text;
+   
     color: white;
     text-align: center;
     font-size: 5rem;
