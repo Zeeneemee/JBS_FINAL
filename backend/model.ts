@@ -6,3 +6,12 @@ export type Student = { // Corrected from 'int' to 'number'
     internship?: boolean, // Made optional with '?'
     entryLevel?: boolean  // Made optional with '?'
 }
+
+// interface Students {
+//     fullname: string,
+//     position: string,
+//     companyName: string,
+//     email: string,
+//     internship?: boolean, // Made optional with '?'
+//     entryLevel?: boolean  // Made optional with '?'
+// }
